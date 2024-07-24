@@ -16,14 +16,20 @@ function App() {
   }, [notas]);
 
   const agregarNota = (nota) => {
-    setNotas([...notas, nota]);
+    const nuevaNota = { ...nota, id: Date.now() }; 
+    setNotas([...notas, nuevaNota]);
+  };
+
+  const eliminar = (id) => {
+    const nuevasNotas = notas.filter(nota => nota.id !== id);
+    setNotas(nuevasNotas);
   };
 
   return (
     <div class="container mt-5">
       <h1>Post It Simulator!</h1>
       <FormularioNota agregarNota={agregarNota} />
-      <ListaNotas notas={notas} />
+      <ListaNotas notas={notas} eliminar={eliminar} />
     </div>
   );
 }
