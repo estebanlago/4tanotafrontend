@@ -29,7 +29,6 @@ body {
 .card {
     height: 275px;
     box-shadow: 5px 5px rgba(128, 128, 128, 0.797);
-    rotate: var(--angulos-variable);
 }
 
 .card:hover {
@@ -51,6 +50,10 @@ body {
     border-radius: 0%;
     border-style: none;
     background-color: rgba(255,254,205,255)
+}
+
+.btn-secondary {
+    margin-right: 5px;
 }
 
 @media only screen and (max-width: 600px) {
