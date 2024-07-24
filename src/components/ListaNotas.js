@@ -1,6 +1,8 @@
+// Importación de librerías y componentes.
 import React from 'react';
 import Nota from './Nota.js';
 
+// Estructación y definición de componente requerido para la lista de notas.
 function ListaNotas({ notas, eliminar }) {
   return (
     <div class="row">
@@ -13,4 +15,5 @@ function ListaNotas({ notas, eliminar }) {
   );
 }
 
+// Exporta componente.
 export default ListaNotas;

@@ -1,5 +1,7 @@
+// Importación de librerías.
 import React from 'react';
 
+// Estructación y definición de componente Nota.
 function Nota({ nota, eliminar }) {
   const { titulo, descripcion, importante } = nota;
   return (
@@ -13,4 +15,5 @@ function Nota({ nota, eliminar }) {
   );
 }
 
+// Exporta componente.
 export default Nota;

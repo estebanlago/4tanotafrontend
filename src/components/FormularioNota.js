@@ -1,21 +1,27 @@
+// Importación de hooks.
 import React, { useState, useRef, useEffect } from 'react';
 
+// Definición del componente funcional FormularioNota, y sus variables.
 function FormularioNota({ agregarNota }) {
   const [titulo, setTitulo] = useState('');
   const [descripcion, setDescripcion] = useState('');
   const [importante, setImportante] = useState(false);
 
+  // Referencias DOM.
   const inputDescripcionRef = useRef(null);
   const divErrorDescripcionRef = useRef(null);
 
+  // Componente para manejar el envío de la nota.
   const manejarEnvio = (e) => {
     e.preventDefault();
     const input_descripcion = inputDescripcionRef.current;
     const div_error_descripcion = divErrorDescripcionRef.current;
 
+    // Elimina alerta de error.
     div_error_descripcion.innerHTML = "<br>";
     input_descripcion.classList.remove("is-invalid");
 
+    // Si la descripción equivale a null, dispara mensaje de error.
     if (!descripcion) {
       div_error_descripcion.innerHTML = "Casilla obligatoria.";
       div_error_descripcion.className = "text-danger small mt-1";
@@ -23,6 +29,7 @@ function FormularioNota({ agregarNota }) {
       return;
     }
     
+    // Si se cumplen las condiciones, agrega la nota.
     agregarNota({
       titulo,
       descripcion,
@@ -33,6 +40,7 @@ function FormularioNota({ agregarNota }) {
     setImportante(false);
   };
 
+  // Retorna estructura del formulario (casillas para input).
   return (
     <form onSubmit={manejarEnvio}>
       <div class="row">
@@ -74,4 +82,5 @@ function FormularioNota({ agregarNota }) {
   );
 }
 
+// Exporta componente.
 export default FormularioNota;
