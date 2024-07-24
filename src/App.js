@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import FormularioNota from './components/FormularioNota';
+import ListaNotas from './components/ListaNotas';
+import './estilo.css'
 
 function App() {
+  const [notas, setNotas] = useState([]);
+
+  useEffect(() => {
+    const notasAlmacenadas = JSON.parse(localStorage.getItem('notas')) || [];
+    setNotas(notasAlmacenadas);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('notas', JSON.stringify(notas));
+  }, [notas]);
+
+  const agregarNota = (nota) => {
+    setNotas([...notas, nota]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container mt-5">
+      <h1>Post It Simulator!</h1>
+      <FormularioNota agregarNota={agregarNota} />
+      <ListaNotas notas={notas} />
     </div>
   );
 }
