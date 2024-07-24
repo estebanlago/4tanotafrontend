@@ -1,3 +1,7 @@
+:root {
+    --angulos-variable: 0deg;
+}
+
 h1 {
     font-weight: bolder;
 }
@@ -23,8 +27,18 @@ body {
 }
 
 .card {
-    height: 270px;
+    height: 275px;
     box-shadow: 5px 5px rgba(128, 128, 128, 0.797);
+    rotate: var(--angulos-variable);
+}
+
+.card:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    position:relative;
+    z-index:5;
 }
 
 .bt-importante {
@@ -39,5 +53,7 @@ body {
     background-color: rgba(255,254,205,255)
 }
 
-
-
+@media only screen and (max-width: 600px) {
+    .card {margin-right: 50px; margin-left: 50px}
+  }
+  

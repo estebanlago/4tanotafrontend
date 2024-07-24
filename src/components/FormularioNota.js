@@ -35,39 +35,39 @@ function FormularioNota({ agregarNota }) {
 
   return (
     <form onSubmit={manejarEnvio}>
-      <div className="row">
-        <div className="col-12 col-md-3 mb-5 form-group">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-5 form-group">
           <input
             type="text"
-            className="form-control"
+            class="form-control"
             placeholder="Título"
             value={titulo}
             onChange={(e) => setTitulo(e.target.value)}
           />
         </div>
-        <div className="col-12 col-md-4 mb-5 form-group">
+        <div class="col-12 col-md-4 mb-5 form-group">
           <input
             type="text"
             id="descripcion"
             ref={inputDescripcionRef}
-            className="form-control"
+            class="form-control"
             placeholder="Descripción"
             value={descripcion}
             onChange={(e) => setDescripcion(e.target.value)}
           />
           <div id="error-descripcion" ref={divErrorDescripcionRef}><br /></div>
         </div>
-        <div className="col-6 col-md-2 mb-5 d-flex justify-content-center form-check">
+        <div class="col-6 col-md-2 mb-5 d-flex justify-content-center form-check">
           <input
             type="checkbox"
-            className="form-check-input"
+            class="form-check-input"
             checked={importante}
             onChange={(e) => setImportante(e.target.checked)}
           />
-          <label className="form-check-label"><span>&nbsp;&nbsp;&nbsp;</span>¿Es Importante?</label>
+          <label class="form-check-label"><span>&nbsp;&nbsp;&nbsp;</span>¿Es Importante?</label>
         </div>
-        <div className="col-6 col-md-3 mb-5">
-          <button type="submit" className="btn btn-dark w-100">Agregar</button>
+        <div class="col-6 col-md-3 mb-5">
+          <button type="submit" class="btn btn-dark w-100">Agregar</button>
         </div>
       </div>
     </form>

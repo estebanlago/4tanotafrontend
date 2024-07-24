@@ -20,7 +20,7 @@ function App() {
   };
 
   return (
-    <div className="container mt-5">
+    <div class="container mt-5">
       <h1>Post It Simulator!</h1>
       <FormularioNota agregarNota={agregarNota} />
       <ListaNotas notas={notas} />

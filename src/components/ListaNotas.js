@@ -3,9 +3,9 @@ import Nota from './Nota.js';
 
 function ListaNotas({ notas }) {
   return (
-    <div className="row">
+    <div class="row">
       {notas.map((nota, indice) => (
-        <div key={indice} className="col-12 col-md-6 col-lg-3 mb-3">
+        <div key={indice} class="col-12 col-md-6 col-lg-3 mb-3">
           <Nota nota={nota} />
         </div>
       ))}
