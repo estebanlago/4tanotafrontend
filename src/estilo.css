@@ -2,6 +2,14 @@ h1 {
     font-weight: bolder;
 }
 
+h4 {
+    font-weight: bolder;
+}
+
+p {
+    font-family: cursive;
+}
+
 body {
     background-color: gainsboro;
 }
@@ -15,7 +23,8 @@ body {
 }
 
 .card {
-    height: 250px;
+    height: 270px;
+    box-shadow: 5px 5px rgba(128, 128, 128, 0.797);
 }
 
 .bt-importante {
